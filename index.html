@@ -68,5 +68,26 @@ window.addEventListener('load', ()=>{
   });
 });
 </script>
+<script>
+  // your existing code
+</script>
+
+<script>
+document.addEventListener("click", function(e) {
+  const button = e.target.closest("button");
+
+  if (button && button.textContent.includes("Consult an Expert")) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    const message = "Hello, I would like to consult an expert.";
+    const url =
+      "https://wa.me/919982330838?text=" +
+      encodeURIComponent(message);
+
+    window.open(url, "_blank");
+  }
+}, true);
+</script>
 </body>
 </html>
